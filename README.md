@@ -41,8 +41,11 @@ The GUI should allow:
    * limits and constraints (e.g. times, rates, filesize)
    * filetypes (e.g. PDF/HTML/XML)
   
-  * program options
-  * 
+ * program options
+   
+about 10 each from `getpapers` and `quickscrape` and `pman`. probably fewer from `norma`. `ami` has many facets (ca 8), and each has sub-parameters.
+
+ * 
  
 
     
