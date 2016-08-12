@@ -1,7 +1,22 @@
 # specs for `getpapers`
 
-Initially ONLY used for `crossref`. Other APIs (including EPMC) are much simpler and rarer.
+Initially ONLY used for `crossref` and `epmc`. Other APIs (including EPMC) are much or and rarer.
 
+## arguments
+
+```
+  -h, --help              output usage information                  NO
+  -V, --version           output the version number                 NO
+  -q, --query <query>     Search query (required)                   EMPC NOT for CROSSREF
+  -o, --outdir <path>     Output directory (required - will be created if not found)   MANDATORY == CPROJECT
+  --api <name>            API to search [arxiv, eupmc, ieee] (default: eupmc)  REQUIRED FOR CROSSREF; DEFAULTS TO EPMC
+  -x, --xml               Download fulltext XMLs if available       EPMC NOT for CROSSREF
+  -p, --pdf               Download fulltext PDFs if available       EPMC NOT for CROSSREF
+  -s, --supp              Download supplementary files if available EPMC NOT for CROSSREF
+  -l, --loglevel <level>  amount of information to log (silent, verbose, info*, data, warn, error, or debug) NO
+  -a, --all               search all papers, not just open access   EPMC NOT for CROSSREF
+  --filter                construct CROSSREF query - NOT for EPMC
+```
 ## crossref
 
 The `crossref` api is at :
