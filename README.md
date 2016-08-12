@@ -41,11 +41,14 @@ The GUI should allow:
    * limits and constraints (e.g. times, rates, filesize)
    * filetypes (e.g. PDF/HTML/XML)
   
- * program options
-   
-about 10 each from `getpapers` and `quickscrape` and `pman`. probably fewer from `norma`. `ami` has many facets (ca 8), and each has sub-parameters.
+ * program options. about 10 each from `getpapers` and `quickscrape` and `pman`. probably fewer from `norma`. `ami` has many facets (ca 8), and each has sub-parameters.
 
- * 
+ * submission of jobs. Creation of command-line from gui options. Option to launch or edit. Follow progress of jobs?
+ 
+... more?
+
+
+ 
  
 
     
