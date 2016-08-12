@@ -15,7 +15,8 @@ Emphasis on use by early adopters, with GUI-based selection of parameters , edit
 The GUI should allow:
  * chaining of commands, . Example (pseudocode and pseudocommands)
   ```
-  getpapers --project proj [params]
+  getpapers --project proj --api crossref 
+     --filter issn:1234-5678,issn:9987-2341,type:journal-article,from-pub-date:2015-01-31,until-pub-date:2015-12-31
   pman --project proj --outUrls urls.txt 
 
   do {
@@ -29,6 +30,19 @@ The GUI should allow:
      --w.search(dictionary:http://contentmine.org/dictionaries/phytochem)
      --dataTables 
 ```
-
+ * pull-downs / drop-down / ranges of parameters
+  The commands may be assembled from a number of omittable and repeatable items, with varying types. The `crossref` API is complex and we deliberately limit the scope to `/works`. Among the selectables are:
+   * dates for crossref (until-* should be equals or greatr than from-*)
+   * messages for logging operator comments
+   * project name (mapped onto new /existing directories on disk).
+   * service (getpapers/quickscrape/norma/ami)
+   * defaults
+   * file sources (e.g. dictionaries) or web sources
+   * limits and constraints (e.g. times, rates, filesize)
+   * filetypes (e.g. PDF/HTML/XML)
+  
+  * program options
+  * 
+ 
 
     
