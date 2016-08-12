@@ -13,5 +13,12 @@ There is much of this that we do not currently use (or use rarely).
 ### works
 `/works` (i.e. articles, etc.) will be the only type supported.
 
-"Combining resource components" is not supported in the GUI.
+**Combining resource components** is not supported in the GUI.
+
+**Parameters** only supports `filter` 
+
+**Queries** not supported (`query` only uses abstract and titles we think)
+
+
+
 
