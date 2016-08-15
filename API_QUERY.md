@@ -71,7 +71,7 @@ This has the text of the query (it *may* be editable to include other fields).
 
 ### Publishers.
 
-This should allow ORing of entries. Unfortunately there are 1000 publishers and their names are often not obvious.  `crossref` `member` names could be used. Looking up the correct info for every publisher is out of scope. Suggest we have a list of about 30 of the most frequent ones.
+This should allow ORing of entries. Unfortunately there are 1000 publishers and their names are often not obvious.  `crossref` `member` names could be used. Looking up the correct info for every publisher is out of scope. Suggest we have a list of about 30 of the most frequent ones. The list is short enough perhaps it could be held locally.
 
 ### Journals
 
