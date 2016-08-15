@@ -61,14 +61,77 @@ The EPMC API is at:
 https://europepmc.org/RestfulWebService
 Most of the functionality we require is already in `getpapers`
 
-Most of the emphasis here is on building queries, e.g. quoting:
+see https://europepmc.org/advancesearch for compound queries.
+It has fields:
+ * Journal (with autocomplete for most relevant)
+ * Author
+ * Date (from to) with electronic/inPrint/embargo
+ * Volume, Issue, first page 
+ * Title
+ * Bibliographic field (Abstract, affiliation ... Year (26 fields)
+ * funder
+ * open acccess
+ * publication type (includes journal article)
+ * license
+ * sections (17 types)
+ * data
+ * external links
+ 
+ Of these the only ones we need are Journal, Date, ?title?, open access, 
+ 
+Most of the emphasis here is on building queries
+```
+query=sodium chloride
+```
 ```
 http://www.ebi.ac.uk/europepmc/webservices/rest/profile?query=human%20malaria
 or
 http://www.ebi.ac.uk/europepmc/webservices/rest/profile?query="human malaria"
 ```
+More advanced:
+```
+(JOURNAL:"Proceedings of the Royal Society of London. Series B, Biological sciences") AND malaria
 
-## building queries
+%28JOURNAL:%22Nature+chemistry%22+OR+JOURNAL:%22Molecules+%28Basel,+Switzerland%29%22%29+AND+%28FIRST_PDATE:%5B2016-07-01+TO+2016-08-15%5D%29
+same as
+query=(JOURNAL:"Nature+chemistry"+OR+JOURNAL:"Molecules+(Basel,+Switzerland)")+AND+(FIRST_PDATE:[2016-07-01+TO+2016-08-15])
+
+refine to
+(TITLE:Samarium) AND (JOURNAL:"Nature chemistry" OR JOURNAL:"Molecules (Basel, Switzerland)") AND (FIRST_PDATE:[2016-07-01 TO 2016-08-15])
+or
+(JOURNAL:"Nature chemistry" OR JOURNAL:"Molecules (Basel, Switzerland)") AND (METHODS:"sodium chloride") AND (FIRST_PDATE:[2015-08-01 TO 2016-08-15])
+```
+for sodium chloride anywhere:
+```
+"sodium chloride" AND (JOURNAL:"Nature chemistry" OR JOURNAL:"Molecules (Basel, Switzerland)") AND (FIRST_PDATE:[2015-08-01 TO 2016-08-15])
+```
+or OR for text
+```
+("sodium chloride" OR "rattus rattus") AND (FIRST_PDATE:[2016-07-01 TO 2016-08-15]) 
+```
+
+
+## building queries, quoting, etc
+
+both `crossref` and `epmc` allow the construction of queries - see https://europepmc.org/advancesearch which allows the creation / editing of a query interactively. 
+
+### crossref 
+```
+/works?query="sodium chloride"&filter=issn:1420-3049,issn:1755-4349,from-pub-date:2016-07-15,type=journal-article
+```
+The components are"
+ * *works* // fixed, required
+ * *query* // optional
+ * *filter* // normally required
+ 
+The logic is that repeated filters *of the same type* are OR'ed, while different filters are ANDed. Not sure how `query` is ORed.
+
+### epmc
+
+see above. The "query" does not seem to have a keyword.
+
+
+
 
 
 
